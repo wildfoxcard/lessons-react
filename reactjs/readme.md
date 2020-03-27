@@ -60,6 +60,29 @@ create-react-app <project_name>
 
 #### Third Video
 
+This video explains file and folder structure.
+
+1)package.json - normal node file with scripts and dependencies installed
+2)public
+    a) manifest.json - out of scope for this video
+    b) favicon.ico - normal favicon, nothing to do with react.
+    c) index.html - Normal index file with the root div.
+3)src - the main react folder
+    a) index.js - the starting point to the react application
+    b) app.js - the scaffold component for the react app
+    c) app.css - for styling
+    d) app.test.js - for unit test
+    e) index.css - applies styles to the body tag
+    d) logo.svg - references by the app component
+    e) serviceWorker.js - out of scope for this video.
+
+#### Fourth Video
+
+Components are in javascript files. They can also be in .jsx files.
+
+There are two types of components:
+1) Stateless functional Component
+2) Stateful Class Component
 
 
 

@@ -92,6 +92,13 @@ Only input is props.
 
 We are using Pascel case for component file names.
 
+#### Sixth Video
+
+This video is about Class Components.
+
+Input is props but also has private state.
+
+
 
 
 

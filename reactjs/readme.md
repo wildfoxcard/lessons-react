@@ -112,6 +112,21 @@ When to use a functional compare to a class component
 
 Video seven is about a new feature that allows state in functional components.
 
+#### Eighth Video
+
+This video is about JSX.
+
+JSX is an extension to the javascript language. JSX is not a necessity to write React Application. JSX ultimately transpiles to pure javascript which is understood by browsers.
+
+html/JSX differences
+|html|JSX|
+|---|---|
+| class | className|
+| for | htmlFor |
+| onclick | onClick |
+| tabindex | tabIndex |
+
+### ninth Video
 
 
 

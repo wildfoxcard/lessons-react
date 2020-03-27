@@ -98,6 +98,22 @@ This video is about Class Components.
 
 Input is props but also has private state.
 
+When to use a functional compare to a class component
+
+1) functional is the best to choice.
+2) functional doesn't have "this"
+3) functional makes you think of a solution without using state <-- decrepated statement
+
+4) class is more feature rich
+5) class has life-cycle hooks
+6) class is best for complex UIs.
+
+#### Seventh Video
+
+Video seven is about a new feature that allows state in functional components.
+
+
+
 
 
 

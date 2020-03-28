@@ -210,3 +210,58 @@ The constructor calls super to all basic functionality to run while allowing you
         }
     }
 ```
+
+11th video
+
+This video is about the setState function.
+
+Imagine we have a class component that has a state of count = 0
+
+```javascript
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            count: 0
+        }
+    }
+```
+
+We can use set state to increment that count
+
+```javascript
+this.setState({
+  count: this.state.count + 1
+});
+```
+
+You can also use the second param for a callback function
+
+```javascript
+this.setState(
+  {
+    count: this.state.count + 1
+  },
+  () => {
+    console.log(this.state.count);
+  }
+);
+```
+
+This is the better way to manage state
+
+```javascript
+this.setState(prevState => ({
+  count: prevState.count + 1
+}));
+```
+
+You can also have a state that is depended on props
+
+
+```javascript
+this.setState((prevState, props) => ({
+  count: prevState.count + props.addValue
+}));
+```
+

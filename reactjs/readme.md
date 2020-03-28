@@ -718,3 +718,15 @@ handleSubmit = event => {
   event.preventDefault();
 };
 ```
+
+#### 22nd Video
+
+This video is about the lifecycle methods. This applies to class components and not functional components
+
+There are four phases:
+1) Mounting
+2) Updating
+3) Unmounting
+4) Error Handling
+
+

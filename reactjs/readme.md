@@ -290,24 +290,69 @@ In a class component, using destructuring I can do this.
 
 ```jsx
 class Welcome extends Component {
-    render() {
-        return <h1>Weclome {this.props.name} a.k.a. {this.props.heroName}</h1>
-    }
+  render() {
+    return (
+      <h1>
+        Weclome {this.props.name} a.k.a. {this.props.heroName}
+      </h1>
+    );
+  }
 }
 ```
 
 ```jsx
 class Welcome extends Component {
-    render() {
-        const {name, heroName} = this.props
-        return <h1>Weclome {name} a.k.a. {heroName}</h1>
-    }
+  render() {
+    const { name, heroName } = this.props;
+    return (
+      <h1>
+        Weclome {name} a.k.a. {heroName}
+      </h1>
+    );
+  }
 }
 ```
 
 this can also work with state
 
 ```jsx
-const {state1, state2} = this.state
+const { state1, state2 } = this.state;
 ```
 
+#### 13th video
+
+This video is about event types
+
+Event will use camelcase instead of lower case.
+
+onClick in a functional component
+
+```jsx
+function clickHandler() {
+  console.log("click");
+}
+
+return (
+  <div>
+    <button onClick={clickHandler}>Click</button>
+  </div>
+);
+```
+
+onClick in a class component
+
+```jsx
+class ClassClick extends Component {
+  clickHandler() {
+    console.log("clicked!");
+  }
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.clickHandler}>Click Me</button>
+      </div>
+    );
+  }
+}
+```

@@ -1,10 +1,10 @@
-# Typescript - The basics
+# ReactJS
 
-from youtube video:
+from youtube playlist:
 
 https://www.youtube.com/watch?v=QFaFIcGhPoM&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3
 
-### notes from video:
+### notes from videos:
 
 #### First video
 
@@ -597,4 +597,124 @@ import styles from "./appStyles.module.css";
 
 ```jsx
 <h1 class={styles.success}>Success</h1>
+```
+
+#### 21st video
+
+This video is the basic of working with forms in react.
+
+Controlled component for input
+
+```jsx
+class Form extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      username: ""
+    };
+  }
+
+  handleUsernameChange = event => {
+    this.setState({
+      username: event.target.value
+    });
+  };
+
+  render() {
+    return (
+      <form>
+        <div>
+          <label>Username</label>
+          <input
+            type="text"
+            value={this.state.username}
+            onChange={this.handleUsernameChange}
+          />
+        </div>
+      </form>
+    );
+  }
+}
+```
+
+example of a controlled component for textarea
+
+```jsx
+class Form extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      comments: ""
+    };
+  }
+
+  handleCommentsChange = event => {
+    this.setState({
+      comments: event.target.value
+    });
+  };
+
+  render() {
+    return (
+      <form>
+        <div>
+          <label>Comments</label>
+          <textarea
+            value={this.state.comments}
+            onChange={this.handleCommentsChange}
+          ></textarea>
+        </div>
+      </form>
+    );
+  }
+}
+```
+
+example of a controlled component for select
+
+```jsx
+class Form extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      topic: "react"
+    };
+  }
+
+  handleTopicChange = event => {
+    this.setState({
+      topic: event.target.value
+    });
+  };
+
+  render() {
+    return (
+      <form>
+        <div>
+          <label>Topic</label>
+          <select value={this.state.topic} onChange={this.handleTopicChange}>
+            <option value="react">React</option>
+            <option value="angular">Angular</option>
+            <option value="vue">Vue</option>
+          </select>
+        </div>
+      </form>
+    );
+  }
+}
+```
+
+How to submit on a form
+
+```jsx
+<form onSubmit={this.handleSubmit}>
+```
+
+```jsx
+handleSubmit = event => {
+  event.preventDefault();
+};
 ```

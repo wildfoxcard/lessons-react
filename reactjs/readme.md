@@ -534,3 +534,15 @@ const nameList = names.map((name, index) => <h2 key={index}>{name}</h2>);
 ```
 
 Key props are not assessable in child component prop. Key is a keyword.
+
+#### 19th Video
+
+Use index as shown above.
+
+Index as key makes it hard to maintain a list, best to use id in object if your list is dynamic.
+
+list index rules:
+
+1) item in your list do not have a unique Id
+2) The list is a static list and will not change.
+3) The list will never be reordered or filtered

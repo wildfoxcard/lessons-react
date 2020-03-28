@@ -509,3 +509,18 @@ render() {
     )
 }
 ```
+
+#### 17th Video
+
+This video is about rendering a list in react.
+
+Use .map in an array
+
+```jsx
+const names = ["bruce", "Clark", "Diana"];
+const nameList = names.map(name => <h2>{name}</h2>);
+
+return <div>{nameList}</div>;
+```
+
+note: this video didn't talk about keys

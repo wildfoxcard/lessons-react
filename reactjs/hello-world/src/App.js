@@ -6,14 +6,16 @@ import './App.css';
 // import Hello from './components/Hello'
 // import Message from './components/Message'
 // import Counter from './components/Counter'
-import FunctionClick from './components/FunctionClick'
-import ClassClick from './components/ClassClick'
+// import FunctionClick from './components/FunctionClick'
+// import ClassClick from './components/ClassClick'
+import EventBind from './components/EventBind'
 
 
 function App() {
   return (
     <div className="App">
-      <ClassClick />
+      <EventBind />
+      {/* <ClassClick /> */}
       {/* <FunctionClick /> */}
       {/* <Counter /> */}
       {/* <Message /> */}

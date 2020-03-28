@@ -356,3 +356,84 @@ class ClassClick extends Component {
   }
 }
 ```
+
+#### 14th Video
+
+This video is about binding event handlers in class components
+
+The following calls a clickHandler on button click. But the state isn't transferred because this is undefined.
+
+```jsx
+class EventBind extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      message: "hello"
+    };
+  }
+
+  clickHandler() {
+    // this.setState({
+    //     message: "goodbye"
+    // })
+    console.log(this);
+  }
+
+  render() {
+    return (
+      <div>
+        <div>{this.state.message}</div>
+        <button onClick={this.clickHandler}>Click</button>
+      </div>
+    );
+  }
+}
+```
+
+There are many ways to handle event binding.
+
+1. use .bind(this)
+
+```jsx
+<button onClick={this.clickHandler.bind(this)}>Click</button>
+```
+
+But this will cause a render. This is not a problem for a small app but can cause issues in larger applications because of the nested children.
+
+2. Arrow Function
+
+```jsx
+<button onClick={() => this.clickHandler()}>Click</button>
+```
+
+3. Use the constructor
+
+The official way is to use the constructor to assign the bind.
+
+```jsx
+constructor(props) {
+    super(props)
+
+    this.state = {
+        message: "hello"
+    }
+
+    this.clickHandler = this.clickHandler.bind(this)
+}
+```
+
+```jsx
+<button onClick={this.clickHandler}>Click</button>
+```
+
+4. Arrow function as a class property
+
+```jsx
+clickHandler = () => {
+  this.setState({
+    message: "goodbye"
+  });
+  // console.log(this)
+};
+```

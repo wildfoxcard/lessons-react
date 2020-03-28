@@ -126,7 +126,7 @@ html/JSX differences
 | onclick | onClick |
 | tabindex | tabIndex |
 
-### ninth Video
+#### ninth Video
 
 How to use props with functional component.
 
@@ -165,12 +165,48 @@ In a class component, props is available in this.props
 
 ```javascript
 class Welcome extends Component {
-    render() {
-        return <h1>Weclome {this.props.name} a.k.a. {this.props.heroName}</h1>
-    }
+  render() {
+    return (
+      <h1>
+        Weclome {this.props.name} a.k.a. {this.props.heroName}
+      </h1>
+    );
+  }
 }
 ```
 
 props are inmutatble. You cannot change the value.
 
+#### 10th video
 
+This video is about component state.
+
+To use state in a class component, you need to extend the constructor functionality
+
+```javascript
+import React, { Component } from "react";
+
+class Message extends Component {
+  constructor() {
+    super();
+  }
+
+  render() {
+    return <h1>Weclome visitor</h1>;
+  }
+}
+
+export default Message;
+```
+
+The constructor calls super to all basic functionality to run while allowing you access to the constuctor.
+
+```javascript
+...brevity
+    constructor() {
+        super()
+        this.state = {
+            message: "Welcome visitor"
+        }
+    }
+```

@@ -437,3 +437,29 @@ clickHandler = () => {
   // console.log(this)
 };
 ```
+
+#### 15th Video
+
+This video is about passing a method to the child component
+
+It works the same as passing a prop to a child component
+
+```jsx
+<ChildComponent greetHandler={this.greetParent} />
+```
+
+```jsx
+function ChildComponent(props) {
+  return (
+    <div>
+      <button onClick={props.greetHandler}>Greet Parent</button>
+    </div>
+  );
+}
+```
+
+This is how to pass parameters to the child component
+
+```jsx
+<ChildComponent greetHandler={() => this.greetParent('child')} />
+```

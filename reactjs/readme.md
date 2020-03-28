@@ -543,6 +543,58 @@ Index as key makes it hard to maintain a list, best to use id in object if your 
 
 list index rules:
 
-1) item in your list do not have a unique Id
-2) The list is a static list and will not change.
-3) The list will never be reordered or filtered
+1. item in your list do not have a unique Id
+2. The list is a static list and will not change.
+3. The list will never be reordered or filtered
+
+#### 20th video
+
+This video is about styling
+
+1. CSS stylesheets
+2. Inline Styling
+3. CSS Modules
+4. CSS in JS Libraries
+
+how to use css stylesheets
+
+```jsx
+import "./myStyles.css";
+
+function Stylesheet(props) {
+  let className = props.primary ? "primary" : "";
+
+  return (
+    <div>
+      <h1 className={className}>Stylesheets</h1>
+    </div>
+  );
+}
+```
+
+how to use inline styling
+
+```jsx
+const heading = {
+  fontSize: "72px",
+  color: "blue"
+};
+
+function Inline() {
+  return (
+    <div>
+      <h1 style={heading}>Inline</h1>
+    </div>
+  );
+}
+```
+
+how to use css module
+
+```jsx
+import styles from "./appStyles.module.css";
+```
+
+```jsx
+<h1 class={styles.success}>Success</h1>
+```

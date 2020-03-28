@@ -524,3 +524,13 @@ return <div>{nameList}</div>;
 ```
 
 note: this video didn't talk about keys
+
+#### 18th Video
+
+This video is about using a key prop when mapping
+
+```jsx
+const nameList = names.map((name, index) => <h2 key={index}>{name}</h2>);
+```
+
+Key props are not assessable in child component prop. Key is a keyword.

@@ -4,32 +4,30 @@ from youtube video:
 
 https://www.youtube.com/watch?v=QFaFIcGhPoM&list=PLC3y8-rFHvwgg3vaYJgHGnModB54rxOk3
 
-
 ### notes from video:
-
 
 #### First video
 
-1) React in maintain by Facebook
-2) Reusable components
-3) React is declarative
-4) React can be seamlessly integrated into any app.
-5) HTML, CSS, and javascript (es6) fundamentals is required
-6) ES6 requirements
-    a) let & const
-    b) arrow functions
-    c) template literals
-    d) default parameters
-    e) object literals
-    f) rest and spread operators
-    g) destructuring assignments
-
+1. React in maintain by Facebook
+2. Reusable components
+3. React is declarative
+4. React can be seamlessly integrated into any app.
+5. HTML, CSS, and javascript (es6) fundamentals is required
+6. ES6 requirements
+   a) let & const
+   b) arrow functions
+   c) template literals
+   d) default parameters
+   e) object literals
+   f) rest and spread operators
+   g) destructuring assignments
 
 #### Second Video
 
 Requirements:
-1) node
-2) IDE (mine will be vscode)
+
+1. node
+2. IDE (mine will be vscode)
 
 how to install:
 
@@ -46,10 +44,8 @@ cd hello-world
 npm start
 ```
 
-
 What is npx?
 npm package runner
-
 
 how to use normal npm
 
@@ -62,12 +58,15 @@ create-react-app <project_name>
 
 This video explains file and folder structure.
 
-1) package.json - normal node file with scripts and dependencies installed
-2) public
+1. package.json - normal node file with scripts and dependencies installed
+2. public
+
 - manifest.json - out of scope for this video
 - favicon.ico - normal favicon, nothing to do with react.
 - index.html - Normal index file with the root div.
-3) src - the main react folder
+
+3. src - the main react folder
+
 - index.js - the starting point to the react application
 - app.js - the scaffold component for the react app
 - app.css - for styling
@@ -81,8 +80,9 @@ This video explains file and folder structure.
 Components are in javascript files. They can also be in .jsx files.
 
 There are two types of components:
-1) Stateless functional Component
-2) Stateful Class Component
+
+1. Stateless functional Component
+2. Stateful Class Component
 
 #### Fifth Video
 
@@ -100,13 +100,13 @@ Input is props but also has private state.
 
 When to use a functional compare to a class component
 
-1) functional is the best to choice.
-2) functional doesn't have "this"
-3) functional makes you think of a solution without using state <-- decrepated statement
+1. functional is the best to choice.
+2. functional doesn't have "this"
+3. functional makes you think of a solution without using state <-- decrepated statement
 
-4) class is more feature rich
-5) class has life-cycle hooks
-6) class is best for complex UIs.
+4. class is more feature rich
+5. class has life-cycle hooks
+6. class is best for complex UIs.
 
 #### Seventh Video
 
@@ -128,9 +128,49 @@ html/JSX differences
 
 ### ninth Video
 
+How to use props with functional component.
 
+```javascript
+const Greet = (props) => {
+    ...
+}
+```
 
+Now he can add props of the element.
 
+```javascript
+<Greet name="bob" />
+```
 
+plus we can use children props
+
+```javascript
+<Greet name="bob">
+  <p>This is children props</p>
+</Greet>
+```
+
+```javascript
+const Greet = props => {
+  return (
+    <div>
+      <h1>{props.name}</h1>
+      {props.children}
+    </div>
+  );
+};
+```
+
+In a class component, props is available in this.props
+
+```javascript
+class Welcome extends Component {
+    render() {
+        return <h1>Weclome {this.props.name} a.k.a. {this.props.heroName}</h1>
+    }
+}
+```
+
+props are inmutatble. You cannot change the value.
 
 

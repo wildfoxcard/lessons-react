@@ -211,7 +211,7 @@ The constructor calls super to all basic functionality to run while allowing you
     }
 ```
 
-11th video
+#### 11th video
 
 This video is about the setState function.
 
@@ -258,10 +258,56 @@ this.setState(prevState => ({
 
 You can also have a state that is depended on props
 
-
 ```javascript
 this.setState((prevState, props) => ({
   count: prevState.count + props.addValue
 }));
+```
+
+#### 12th video
+
+This video is about destructuring props and state
+
+In the function component, using destructuring I can do this:
+
+```jsx
+const Greet = (props) => {
+```
+
+```jsx
+const Greet = ({name, heroName}) => {
+```
+
+The second way is to assign to a const variable
+
+```jsx
+const Greet = props => {
+  const { name, heroName, children } = props;
+};
+```
+
+In a class component, using destructuring I can do this.
+
+```jsx
+class Welcome extends Component {
+    render() {
+        return <h1>Weclome {this.props.name} a.k.a. {this.props.heroName}</h1>
+    }
+}
+```
+
+```jsx
+class Welcome extends Component {
+    render() {
+        const {name, heroName} = this.props
+        return <h1>Weclome {name} a.k.a. {heroName}</h1>
+    }
+}
+```
+
+this can also work with state
+
+```jsx
+const {state1, state2} = this.state
 ```
 

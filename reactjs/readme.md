@@ -461,5 +461,51 @@ function ChildComponent(props) {
 This is how to pass parameters to the child component
 
 ```jsx
-<ChildComponent greetHandler={() => this.greetParent('child')} />
+<ChildComponent greetHandler={() => this.greetParent("child")} />
+```
+
+#### 16th Video
+
+This video is about conditional rendering. It works the same way in react as it does in javascript. These are your options:
+
+1. if/else
+2. Element Variables
+3. Ternary conditional operator
+4. Short circuit operator
+
+Conditional rendering is rendering components base on conditions. Below is the Element variable approach.
+
+```jsx
+render() {
+    let message;
+    if(this.state.isLoggedIn) {
+        message = <div>Welcome Mike</div>
+    } else {
+        message = <div>Welcome Guest</div>
+    }
+
+    return <div>{message}</div>
+}
+```
+
+Below is an example of a Ternary conditional operator
+
+```jsx
+render() {
+    return (
+        this.state.isLoggedIn ?
+        <div>Welcome Mike</div> :
+        <div>Welcome Guest</div>
+    )
+}
+```
+
+Below is a short circuit operator approach
+
+```jsx
+render() {
+    return (
+        this.state.isLoggedIn && <div>Welcome Mike</div>
+    )
+}
 ```

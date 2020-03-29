@@ -724,9 +724,49 @@ handleSubmit = event => {
 This video is about the lifecycle methods. This applies to class components and not functional components
 
 There are four phases:
-1) Mounting
-2) Updating
-3) Unmounting
-4) Error Handling
 
+1. Mounting
+2. Updating
+3. Unmounting
+4. Error Handling
 
+#### 23rd Video
+
+This video is about the mounting lifecycle methods
+
+| Hook                                          | Description                                                                                         |
+| --------------------------------------------- | --------------------------------------------------------------------------------------------------- |
+| constructor(props)                            | A special function that will get called whenever a new component is created.                        |
+| static getDerivedStateFromProps(props, state) | When the state of the component depends on changes in props over time                               |
+| render()                                      | Only Required Method                                                                                |
+| ComponentDidMount                             | Invoked immediately after a component and all its children components have been rendered to the DOM |
+
+Example of a constructor:
+
+```jsx
+constructor(props) {
+    super(props)
+
+    this.state = {
+            name : "Mike"
+    }
+    console.log('LifecycleA constructor')
+}
+```
+
+Example of getDrivedStateFromProps
+
+```jsx
+static getDerivedStateFromProps(props, state) {
+    console.log('LifecycleA getDerivedStateFromProps')
+    return null; // return null or state
+}
+```
+
+Example of componentDidMount
+
+```jsx
+componentDidMount() {
+    console.log('LifecycleA componentDidMount')
+}
+```

@@ -887,5 +887,17 @@ example: string 'Mike' returns true
 Complex Types
 b returns true if a and b reference the exact same object
 
+If you use pure components, don't push to an array or mod an object. Always setState or props to a new object.
+
+#### 27th Video
+
+This video is about React.memo
+
+It is just like the pure component above with the shallow comparison but used for functional components.
+
+```jsx
+export default React.memo(MemoComp)
+```
+
 
 

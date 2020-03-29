@@ -825,8 +825,43 @@ Unmounting phase has only one method
 Error Handling Phase Method
 
 | Method                                 | Description |
-| -------------------------------------- | -------- |
-| static getDerivedStateFromError(error) |          |
-| componentDidCatch(error, info)         |          |
+| -------------------------------------- | ----------- |
+| static getDerivedStateFromError(error) |             |
+| componentDidCatch(error, info)         |             |
 
 Both of these methods are when there is an error either during rendering, in a lifecycle method, or in the constructor of any child component
+
+#### 25th Video
+
+This video is about react fragments
+
+```jsx
+<React.Fragment>
+  <h1>Fragment Demo</h1>
+  <p>This describes the fragment demo component</p>
+</React.Fragment>
+```
+
+The following will allow the h1 and p tag to be render without a wrapper element.
+
+instead of using React.Fragment, you can use an empty tag
+
+```jsx
+<>
+  <h1>Fragment Demo</h1>
+  <p>This describes the fragment demo component</p>
+</>
+```
+
+If you use the short hand, you cannot use key on fragments.
+
+```jsx
+<>
+  {items.map(item => (
+    <React.Fragment key={item.id}>
+      <h1>Title</h1>
+      <p>{item.title}</p>
+    </React.Fragment>
+  ))}
+</>
+```

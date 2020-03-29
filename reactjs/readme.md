@@ -865,3 +865,27 @@ If you use the short hand, you cannot use key on fragments.
   ))}
 </>
 ```
+
+#### 26th Video
+
+This video is about pure components
+
+What is the difference between a Pure component and a normal component?
+
+| Regular Component                                                                                          | Pure Component                                                                                                |
+| ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| A regular component does not implement the shouldComponentUpdate method. It always returns true by default | A pure component on the other hand implements shouldComponentUpdate with a shallow props and state comparison |
+
+
+What is a shallow comparison
+
+Primitive Types
+returns true if a and b have the same value and are of the same type
+example: string 'Mike' returns true
+
+
+Complex Types
+b returns true if a and b reference the exact same object
+
+
+

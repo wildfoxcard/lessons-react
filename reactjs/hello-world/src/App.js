@@ -19,12 +19,14 @@ import './App.css';
 // import Form from './components/Form'
 // import LifecycleA from './components/LifecycleA'
 // import FragmentDemo from './components/FragmentDemo'
-import Table from './components/Tables'
+// import Table from './components/Tables'
+import ParentComp from './components/ParentComp';
 
 function App() {
   return (
     <div className="App">
-      <Table />
+      <ParentComp />
+      {/* <Table /> */}
       {/* <FragmentDemo /> */}
       {/* <LifecycleA /> */}
       {/* <Form /> */}

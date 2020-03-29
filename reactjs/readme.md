@@ -734,7 +734,7 @@ There are four phases:
 
 This video is about the mounting lifecycle methods
 
-| Hook                                          | Description                                                                                         |
+| Method                                        | Description                                                                                         |
 | --------------------------------------------- | --------------------------------------------------------------------------------------------------- |
 | constructor(props)                            | A special function that will get called whenever a new component is created.                        |
 | static getDerivedStateFromProps(props, state) | When the state of the component depends on changes in props over time                               |
@@ -770,3 +770,63 @@ componentDidMount() {
     console.log('LifecycleA componentDidMount')
 }
 ```
+
+#### 24th Video
+
+This video is about the updating lifecycle methods
+
+| Method                                             | Description                                                                         |
+| -------------------------------------------------- | ----------------------------------------------------------------------------------- |
+| static getDerivedStateFromProps(props, state)      | Method is called everytime a component is re-rendered                               |
+| shouldComponentUpdate(nextProps, nextState)        | Dictates if the component should re-render or not                                   |
+| render()                                           | only required method                                                                |
+| getSnapshotBeforeUpdate(prevProps, prevState)      | Called right before the changes from the virtual DOM are to be reflected in the DOM |
+| componentDidUpdate(prevProps, prevState, snapshot) | Called after the render is finished in the re-render cycles                         |
+
+Example of getDrivedStateFromProps
+
+```jsx
+static getDerivedStateFromProps(props, state) {
+    console.log('LifecycleA getDerivedStateFromProps')
+    return null; // return null or state
+}
+```
+
+Example of shouldComponentUpdate
+
+```jsx
+shouldComponentUpdate() {
+    console.log('Lifecycle! shouldComponentUpdate')
+}
+```
+
+Example of getSnapshotBeforeUpdate
+
+```jsx
+getSnapshotBeforeUpdate(prevProps, prevState) {
+    console.log('LifecycleA getSnapshotBeforeUpdate')
+}
+```
+
+Example of ComponentDidUpdate
+
+```jsx
+componentDidUpdate() {
+    console.log('LifecycleA componentDidUpdate')
+}
+```
+
+Unmounting phase has only one method
+
+| Method               | Description                                                                  |
+| -------------------- | ---------------------------------------------------------------------------- |
+| componentWillUnmount | Method is invoked immediately before a component is unmounted and destroyedF |
+
+Error Handling Phase Method
+
+| Method                                 | Description |
+| -------------------------------------- | -------- |
+| static getDerivedStateFromError(error) |          |
+| componentDidCatch(error, info)         |          |
+
+Both of these methods are when there is an error either during rendering, in a lifecycle method, or in the constructor of any child component

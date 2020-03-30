@@ -1,7 +1,8 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import RefsDemo from './components/RefsDemo';
+import FocusInput from './components/FocusInput';
+// import RefsDemo from './components/RefsDemo';
 // import Greet from './components/Greet'
 // import Welcome from './components/Welcome'
 // import Hello from './components/Hello'
@@ -26,7 +27,8 @@ import RefsDemo from './components/RefsDemo';
 function App() {
   return (
     <div className="App">
-      <RefsDemo />
+      <FocusInput />
+      {/* <RefsDemo /> */}
       {/* <Table /> */}
       {/* <FragmentDemo /> */}
       {/* <LifecycleA /> */}

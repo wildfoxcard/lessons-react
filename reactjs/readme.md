@@ -952,4 +952,70 @@ class RefsDemo extends Component {
 }
 ```
 
+#### 29th Video
+
+This video is about attaching a ref from a child component to a parent component.
+
+Consider these two files:
+
+The child
+
+```jsx
+import React, { Component } from 'react'
+
+class Input extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.inputRef = React.createRef();
+    }
+
+    focusInput() {
+        this.inputRef.current.focus()
+    }
+    
+    render() {
+        return (
+            <div>
+                <input type="text" ref={this.inputRef} />
+            </div>
+        )
+    }
+}
+
+export default Input
+
+```
+
+The parent
+
+```jsx
+import React, { Component } from 'react'
+import Input from './Input'
+
+class FocusInput extends Component {
+    constructor(props) {
+        super(props)
+    
+        this.componentRef = React.createRef()
+    }
+
+    clickHandler = () => {
+        this.componentRef.current.focusInput()
+    }
+    
+    render() {
+        return (
+            <div>
+                <Input ref={this.componentRef} />
+                <button onClick={this.clickHandler}>Focus Input</button>
+            </div>
+        )
+    }
+}
+
+export default FocusInput
+```
+
+The child focusInput is exposed to the parent ref. That is how this works.
 

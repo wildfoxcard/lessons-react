@@ -876,13 +876,11 @@ What is the difference between a Pure component and a normal component?
 | ---------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
 | A regular component does not implement the shouldComponentUpdate method. It always returns true by default | A pure component on the other hand implements shouldComponentUpdate with a shallow props and state comparison |
 
-
 What is a shallow comparison
 
 Primitive Types
 returns true if a and b have the same value and are of the same type
 example: string 'Mike' returns true
-
 
 Complex Types
 b returns true if a and b reference the exact same object
@@ -896,8 +894,62 @@ This video is about React.memo
 It is just like the pure component above with the shallow comparison but used for functional components.
 
 ```jsx
-export default React.memo(MemoComp)
+export default React.memo(MemoComp);
 ```
 
+#### 28th Video
+
+This video is about refs. Refs will allow you to attach the html node to a variable. Below is a ref being using to focus on an input
+
+```jsx
+class RefsDemo extends Component {
+  constructor(props) {
+    super(props);
+
+    this.inputRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.inputRef.current.focus();
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.inputRef} />
+      </div>
+    );
+  }
+}
+```
+
+This is an example like above but alerting the input value using a ref
+
+```jsx
+class RefsDemo extends Component {
+  constructor(props) {
+    super(props);
+
+    this.inputRef = React.createRef();
+  }
+
+  componentDidMount() {
+    this.inputRef.current.focus();
+  }
+
+  clickHandler = () => {
+    alert(this.inputRef.current.value);
+  };
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.inputRef} />
+        <button onClick={this.clickHandler}>Click</button>
+      </div>
+    );
+  }
+}
+```
 
 

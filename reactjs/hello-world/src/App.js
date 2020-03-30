@@ -1,6 +1,7 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import RefsDemo from './components/RefsDemo';
 // import Greet from './components/Greet'
 // import Welcome from './components/Welcome'
 // import Hello from './components/Hello'
@@ -20,12 +21,12 @@ import './App.css';
 // import LifecycleA from './components/LifecycleA'
 // import FragmentDemo from './components/FragmentDemo'
 // import Table from './components/Tables'
-import ParentComp from './components/ParentComp';
+// import ParentComp from './components/ParentComp';
 
 function App() {
   return (
     <div className="App">
-      <ParentComp />
+      <RefsDemo />
       {/* <Table /> */}
       {/* <FragmentDemo /> */}
       {/* <LifecycleA /> */}

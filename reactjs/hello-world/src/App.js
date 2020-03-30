@@ -1,7 +1,8 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import FocusInput from './components/FocusInput';
+import FRParentInput from './components/FRParentInput';
+// import FocusInput from './components/FocusInput';
 // import RefsDemo from './components/RefsDemo';
 // import Greet from './components/Greet'
 // import Welcome from './components/Welcome'
@@ -27,7 +28,8 @@ import FocusInput from './components/FocusInput';
 function App() {
   return (
     <div className="App">
-      <FocusInput />
+      <FRParentInput />
+      {/* <FocusInput /> */}
       {/* <RefsDemo /> */}
       {/* <Table /> */}
       {/* <FragmentDemo /> */}

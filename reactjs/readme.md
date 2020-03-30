@@ -961,61 +961,113 @@ Consider these two files:
 The child
 
 ```jsx
-import React, { Component } from 'react'
+import React, { Component } from "react";
 
 class Input extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.inputRef = React.createRef();
-    }
+  constructor(props) {
+    super(props);
 
-    focusInput() {
-        this.inputRef.current.focus()
-    }
-    
-    render() {
-        return (
-            <div>
-                <input type="text" ref={this.inputRef} />
-            </div>
-        )
-    }
+    this.inputRef = React.createRef();
+  }
+
+  focusInput() {
+    this.inputRef.current.focus();
+  }
+
+  render() {
+    return (
+      <div>
+        <input type="text" ref={this.inputRef} />
+      </div>
+    );
+  }
 }
 
-export default Input
-
+export default Input;
 ```
 
 The parent
 
 ```jsx
-import React, { Component } from 'react'
-import Input from './Input'
+import React, { Component } from "react";
+import Input from "./Input";
 
 class FocusInput extends Component {
-    constructor(props) {
-        super(props)
-    
-        this.componentRef = React.createRef()
-    }
+  constructor(props) {
+    super(props);
 
-    clickHandler = () => {
-        this.componentRef.current.focusInput()
-    }
-    
-    render() {
-        return (
-            <div>
-                <Input ref={this.componentRef} />
-                <button onClick={this.clickHandler}>Focus Input</button>
-            </div>
-        )
-    }
+    this.componentRef = React.createRef();
+  }
+
+  clickHandler = () => {
+    this.componentRef.current.focusInput();
+  };
+
+  render() {
+    return (
+      <div>
+        <Input ref={this.componentRef} />
+        <button onClick={this.clickHandler}>Focus Input</button>
+      </div>
+    );
+  }
 }
 
-export default FocusInput
+export default FocusInput;
 ```
 
 The child focusInput is exposed to the parent ref. That is how this works.
 
+#### 30th Video
+
+This video is about forwarding refs. It is when the child passes the ref to the parent.
+
+Conside the two files.
+
+child
+
+```jsx
+import React from "react";
+
+const FRInput = React.forwardRef((props, ref) => {
+  return (
+    <div>
+      <input type="text" ref={ref} />
+    </div>
+  );
+});
+
+export default FRInput;
+```
+
+parent
+
+```jsx
+import React, { Component } from "react";
+import FRInput from "./FRInput";
+
+class FRParentInput extends Component {
+  constructor(props) {
+    super(props);
+
+    this.inputRef = React.createRef();
+  }
+
+  clickHandler = () => {
+    this.inputRef.current.focus();
+  };
+
+  render() {
+    return (
+      <div>
+        <FRInput ref={this.inputRef} />
+        <button onClick={this.clickHandler}>Focus Input</button>
+      </div>
+    );
+  }
+}
+
+export default FRParentInput;
+```
+
+The functional component that is the child is using React.forwardRef, this has ref as the second param. We assign that second parameter to the element we want to reference. This is passed to the parent component so it can be assigned to a React.createRef() variable. Now the parent has access to the child ref.

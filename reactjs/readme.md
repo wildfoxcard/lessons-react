@@ -1071,3 +1071,23 @@ export default FRParentInput;
 ```
 
 The functional component that is the child is using React.forwardRef, this has ref as the second param. We assign that second parameter to the element we want to reference. This is passed to the parent component so it can be assigned to a React.createRef() variable. Now the parent has access to the child ref.
+
+#### 31st Video
+
+This video is about react portals. This allows children to render in a child node that exist outside of the hierarchy. Put simple, it is the ability to render a DOM node outside of the root div the app is started from.
+
+```jsx
+import React from "react";
+import ReactDom from "react-dom";
+
+function PortalDemo() {
+  return ReactDom.createPortal(
+    <h1>Portals demo</h1>,
+    document.getElementById("portal-root")
+  );
+}
+
+export default PortalDemo;
+```
+
+Above is using a portal to render the react component into a different location.

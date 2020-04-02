@@ -1,7 +1,8 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import FRParentInput from './components/FRParentInput';
+import PortalDemo from './PortalDemo';
+// import FRParentInput from './components/FRParentInput';
 // import FocusInput from './components/FocusInput';
 // import RefsDemo from './components/RefsDemo';
 // import Greet from './components/Greet'
@@ -28,7 +29,8 @@ import FRParentInput from './components/FRParentInput';
 function App() {
   return (
     <div className="App">
-      <FRParentInput />
+      <PortalDemo />
+      {/* <FRParentInput /> */}
       {/* <FocusInput /> */}
       {/* <RefsDemo /> */}
       {/* <Table /> */}

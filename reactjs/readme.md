@@ -1091,3 +1091,84 @@ export default PortalDemo;
 ```
 
 Above is using a portal to render the react component into a different location.
+
+#### 32nd Video
+
+This video is about Error handling phase methods. These are two different methods.
+
+1. static getDerivedStateFromError(error)
+2. componentDidCatch(error, info)
+
+This uses Error Boundaries
+
+> A class component that implements either one or both of the lifecycle methods getDerivedStateFromError or componentDidCatch becomes an error boundary
+
+The static method getDerivedStateFromErro method is used to render a fallback UI after an error is thrown and the componentDidCatch method is used to log the error information.
+
+how to write an error boundary
+
+```jsx
+import React, { Component } from "react";
+
+class ErrorBoundary extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      hasError: false
+    };
+  }
+
+  static getDerivedStateFromError(error) {
+    return {
+      hasError: true
+    };
+  }
+
+  render() {
+    if (this.state.hasError) {
+      return <h1>Something went wrong</h1>;
+    }
+
+    return this.props.children;
+  }
+}
+
+export default ErrorBoundary;
+```
+
+This will allow an error boundary to be used in the app. Keep in mind that in development the error screen will still show. You will have to close the error screen to see your result. But in production, it will not show the error screen, instead it will show the ErrorBoundary coode.
+
+```jsx
+<ErrorBoundary>
+  <Hero heroName="Batman" />
+  <Hero heroName="Superman" />
+  <Hero heroName="Joker" />
+</ErrorBoundary>
+```
+
+Where to place this error boundary?
+
+Well if superman and batman doesn't have errors, then each item should have it's own error boundary.
+
+```jsx
+<ErrorBoundary>
+  <Hero heroName="Batman" />
+</ErrorBoundary>
+<ErrorBoundary>
+  <Hero heroName="Superman" />
+</ErrorBoundary>
+<ErrorBoundary>
+  <Hero heroName="Joker" />
+</ErrorBoundary>
+```
+
+componentDidCatch is used to get the error you recieved
+
+```jsx
+componentDidCatch(error, info) {
+    console.log(error)
+}
+```
+
+Error boundaries are for react methods, not handlers. You can use a try catch in handlers.

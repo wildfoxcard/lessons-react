@@ -1172,3 +1172,9 @@ componentDidCatch(error, info) {
 ```
 
 Error boundaries are for react methods, not handlers. You can use a try catch in handlers.
+
+
+#### 33rd video
+
+This video is about higher order components. This video only showed a problem about why we would need higher order components. The next videos will explain how to implement this.
+

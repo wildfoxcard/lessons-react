@@ -1,8 +1,10 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import ClickCounter from './components/ClickCounter';
-import HoverCounter from './components/HoverCounter';
+// import ClickCounter from './components/ClickCounter';
+// import HoverCounter from './components/HoverCounter';
+import ClickCounter2 from './components/ClickCounter2';
+import HoverCounter2 from './components/HoverCounter2';
 // import Hero from './components/Hero';
 // import ErrorBoundary from './components/ErrorBoundary';
 // import PortalDemo from './PortalDemo';
@@ -33,8 +35,10 @@ import HoverCounter from './components/HoverCounter';
 function App() {
   return (
     <div className="App">
-      <ClickCounter />
-      <HoverCounter />
+      <ClickCounter2 />
+      <HoverCounter2 />
+      {/* <ClickCounter />
+      <HoverCounter /> */}
       {/* <ErrorBoundary>
         <Hero heroName="Batman" />
       </ErrorBoundary>

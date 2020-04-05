@@ -1233,3 +1233,6 @@ return (
 
 The video also mentions that you can add other parameters to your HOC function. No example need because simple.
 
+#### 36th Video
+
+This video is about Render Props. It is very similar to creating HOCs. This video is set up video similar to video 33.

@@ -151,7 +151,7 @@ plus we can use children props
 ```
 
 ```javascript
-const Greet = props => {
+const Greet = (props) => {
   return (
     <div>
       <h1>{props.name}</h1>
@@ -231,7 +231,7 @@ We can use set state to increment that count
 
 ```javascript
 this.setState({
-  count: this.state.count + 1
+  count: this.state.count + 1,
 });
 ```
 
@@ -240,7 +240,7 @@ You can also use the second param for a callback function
 ```javascript
 this.setState(
   {
-    count: this.state.count + 1
+    count: this.state.count + 1,
   },
   () => {
     console.log(this.state.count);
@@ -251,8 +251,8 @@ this.setState(
 This is the better way to manage state
 
 ```javascript
-this.setState(prevState => ({
-  count: prevState.count + 1
+this.setState((prevState) => ({
+  count: prevState.count + 1,
 }));
 ```
 
@@ -260,7 +260,7 @@ You can also have a state that is depended on props
 
 ```javascript
 this.setState((prevState, props) => ({
-  count: prevState.count + props.addValue
+  count: prevState.count + props.addValue,
 }));
 ```
 
@@ -281,7 +281,7 @@ const Greet = ({name, heroName}) => {
 The second way is to assign to a const variable
 
 ```jsx
-const Greet = props => {
+const Greet = (props) => {
   const { name, heroName, children } = props;
 };
 ```
@@ -369,7 +369,7 @@ class EventBind extends Component {
     super(props);
 
     this.state = {
-      message: "hello"
+      message: "hello",
     };
   }
 
@@ -432,7 +432,7 @@ constructor(props) {
 ```jsx
 clickHandler = () => {
   this.setState({
-    message: "goodbye"
+    message: "goodbye",
   });
   // console.log(this)
 };
@@ -518,7 +518,7 @@ Use .map in an array
 
 ```jsx
 const names = ["bruce", "Clark", "Diana"];
-const nameList = names.map(name => <h2>{name}</h2>);
+const nameList = names.map((name) => <h2>{name}</h2>);
 
 return <div>{nameList}</div>;
 ```
@@ -577,7 +577,7 @@ how to use inline styling
 ```jsx
 const heading = {
   fontSize: "72px",
-  color: "blue"
+  color: "blue",
 };
 
 function Inline() {
@@ -611,13 +611,13 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      username: ""
+      username: "",
     };
   }
 
-  handleUsernameChange = event => {
+  handleUsernameChange = (event) => {
     this.setState({
-      username: event.target.value
+      username: event.target.value,
     });
   };
 
@@ -646,13 +646,13 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      comments: ""
+      comments: "",
     };
   }
 
-  handleCommentsChange = event => {
+  handleCommentsChange = (event) => {
     this.setState({
-      comments: event.target.value
+      comments: event.target.value,
     });
   };
 
@@ -680,13 +680,13 @@ class Form extends Component {
     super(props);
 
     this.state = {
-      topic: "react"
+      topic: "react",
     };
   }
 
-  handleTopicChange = event => {
+  handleTopicChange = (event) => {
     this.setState({
-      topic: event.target.value
+      topic: event.target.value,
     });
   };
 
@@ -714,7 +714,7 @@ How to submit on a form
 ```
 
 ```jsx
-handleSubmit = event => {
+handleSubmit = (event) => {
   event.preventDefault();
 };
 ```
@@ -857,7 +857,7 @@ If you use the short hand, you cannot use key on fragments.
 
 ```jsx
 <>
-  {items.map(item => (
+  {items.map((item) => (
     <React.Fragment key={item.id}>
       <h1>Title</h1>
       <p>{item.title}</p>
@@ -1115,13 +1115,13 @@ class ErrorBoundary extends Component {
     super(props);
 
     this.state = {
-      hasError: false
+      hasError: false,
     };
   }
 
   static getDerivedStateFromError(error) {
     return {
-      hasError: true
+      hasError: true,
     };
   }
 
@@ -1173,8 +1173,47 @@ componentDidCatch(error, info) {
 
 Error boundaries are for react methods, not handlers. You can use a try catch in handlers.
 
-
 #### 33rd video
 
 This video is about higher order components. This video only showed a problem about why we would need higher order components. The next videos will explain how to implement this.
+
+#### 34th video
+
+What is a Higher Order Component (HOC)
+
+A pattern where a function takes a component as an argument and returns a new component. In simple code it will look something like this:
+
+```jsx
+const NewComponent = higherOrderComponent(originalComponent);
+//can also be referred to "EnhancedComponent"
+const EnhancedComponent = higherOrderComponent(originalComponent);
+```
+
+Put simply in a non-technical way:
+
+```jsx
+const IronMan = withSuit(TonyStark);
+```
+
+The first example of a HOC is the following:
+
+```jsx
+import React from "react";
+
+const UpdatedComponent = (OriginalComponent) => {
+  class NewComponent extends React.Component {
+    render() {
+      return <OriginalComponent />;
+    }
+  }
+
+  return NewComponent;
+};
+```
+
+now we export the UpdatedComponent to our component exports:
+
+```jsx
+export default UpdatedComponent(HoverCounter)
+```
 

@@ -1214,6 +1214,22 @@ const UpdatedComponent = (OriginalComponent) => {
 now we export the UpdatedComponent to our component exports:
 
 ```jsx
-export default UpdatedComponent(HoverCounter)
+export default UpdatedComponent(HoverCounter);
 ```
+
+#### 35th video
+
+This is the last video about HOCs. It is about needing to pass the props from the HOC to the return of the WrappedComponent, example:
+
+```jsx
+return (
+  <WrappedComponent
+    count={this.state.count}
+    incrementCount={this.incrementCount}
+    {...this.props} // This is what I am talking about.
+  />
+);
+```
+
+The video also mentions that you can add other parameters to your HOC function. No example need because simple.
 

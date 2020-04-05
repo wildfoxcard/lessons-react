@@ -19,7 +19,7 @@ const withCounter = WrappedComponent => {
         }
 
         render() {
-            return <WrappedComponent count={this.state.count} incrementCount={this.incrementCount} />
+            return <WrappedComponent count={this.state.count} incrementCount={this.incrementCount} {...this.props} />
         }
     }
 

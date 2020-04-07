@@ -9,28 +9,18 @@ class Counter extends Component {
         }
     }
 
-    increment() {
-        // this.setState(
-        //     {
-        //       count: this.state.count + 1
-        //     },
-        //     () => {
-        //       console.log(this.state.count);
-        //     }
-        //   );
-
-          this.setState((prevState) => ({
-              count: prevState.count + 1
-          }))
+    incrementCount = () => {
+        this.setState(prevState => {
+            return {
+                count: prevState.count + 1
+            }
+        })
     }
 
     render() {
         return (
             <div>
-                <div>
-                    count - {this.state.count}
-                </div>
-                <button onClick={() => this.increment()}>Increment</button>
+                {this.props.render(this.state.count, this.incrementCount)}
             </div>
         )
     }

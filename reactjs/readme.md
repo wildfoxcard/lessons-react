@@ -1233,6 +1233,58 @@ return (
 
 The video also mentions that you can add other parameters to your HOC function. No example need because simple.
 
-#### 36th Video
+#### 36th video
 
 This video is about Render Props. It is very similar to creating HOCs. This video is set up video similar to video 33.
+
+#### 37th video
+
+What is Render props?
+
+The term "render prop" refers to a technique for sharing code between React components using a prop whose value is a function.
+
+```jsx
+<Counter
+  render={(count, incrementCount) => (
+    <ClickCounter2 count={count} incrementCount={incrementCount} />
+
+  )}
+/>
+<Counter
+  render={(count, incrementCount) => (
+    <HoverCounter2 count={count} incrementCount={incrementCount} />
+  )}
+/>
+```
+
+```JSX
+import React, { Component } from 'react'
+
+class Counter extends Component {
+    constructor(props) {
+        super(props)
+
+        this.state = {
+            count: 0
+        }
+    }
+
+    incrementCount = () => {
+        this.setState(prevState => {
+            return {
+                count: prevState.count + 1
+            }
+        })
+    }
+
+    render() {
+        return (
+            <div>
+                {this.props.render(this.state.count, this.incrementCount)}
+            </div>
+        )
+    }
+}
+
+export default Counter
+```

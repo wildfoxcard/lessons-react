@@ -1288,3 +1288,11 @@ class Counter extends Component {
 
 export default Counter
 ```
+
+#### 38th Video
+
+This video is about the context api.
+
+What is context?
+
+Context provides a way to pass data through the component tree without having to pass props down manually at every level.

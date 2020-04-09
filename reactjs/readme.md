@@ -1341,3 +1341,42 @@ class ComponentC extends Component {
   }
 }
 ```
+
+#### 40th Video
+
+You can set a default value to your context.
+
+```jsx
+const UserContext = React.createContext("asdf");
+```
+
+Now if you don't add the provider, the text asdf will appear.
+
+```jsx
+{
+  /* <UserProvider value="Mike"> */
+}
+<ComponentC />;
+{
+  /* </UserProvider> */
+}
+```
+
+Context type property
+
+You can add the context as a property type.
+
+```jsx
+class ComponentE extends Component {
+  render() {
+    return (
+      <div>
+        Component E context {this.context}
+        <ComponentF />
+      </div>
+    );
+  }
+}
+
+ComponentE.contextType = UserContext;
+```

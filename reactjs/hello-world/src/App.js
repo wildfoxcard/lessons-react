@@ -1,12 +1,14 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
+import ComponentC from './components/ComponentC'
+import { UserProvider } from './components/UserContext';
 // import ClickCounter from './components/ClickCounter';
 // import HoverCounter from './components/HoverCounter';
-import ClickCounter2 from './components/ClickCounter2';
-import HoverCounter2 from './components/HoverCounter2';
-import User from './components/User';
-import Counter from './components/Counter-old';
+// import ClickCounter2 from './components/ClickCounter2';
+// import HoverCounter2 from './components/HoverCounter2';
+// import User from './components/User';
+// import Counter from './components/Counter-old';
 // import Hero from './components/Hero';
 // import ErrorBoundary from './components/ErrorBoundary';
 // import PortalDemo from './PortalDemo';
@@ -37,7 +39,10 @@ import Counter from './components/Counter-old';
 function App() {
   return (
     <div className="App">
-      <Counter
+      <UserProvider value="Mike">
+        <ComponentC />
+      </UserProvider>
+      {/* <Counter
         render={(count, incrementCount) => (
           <ClickCounter2 count={count} incrementCount={incrementCount} />
 
@@ -47,14 +52,14 @@ function App() {
         render={(count, incrementCount) => (
           <HoverCounter2 count={count} incrementCount={incrementCount} />
         )}
-      />
+      /> */}
 
       {/* <ClickCounter2 />
       <HoverCounter2 />
       <User render={(isLoggedIn) => isLoggedIn ? "Mike" : "Guest"} /> */}
-  {/* <ClickCounter />
+      {/* <ClickCounter />
       <HoverCounter /> */}
-  {/* <ErrorBoundary>
+      {/* <ErrorBoundary>
         <Hero heroName="Batman" />
       </ErrorBoundary>
       <ErrorBoundary>
@@ -63,27 +68,27 @@ function App() {
       <ErrorBoundary>
         <Hero heroName="Joker" />
       </ErrorBoundary> */}
-  {/* <PortalDemo /> */ }
-  {/* <FRParentInput /> */ }
-  {/* <FocusInput /> */ }
-  {/* <RefsDemo /> */ }
-  {/* <Table /> */ }
-  {/* <FragmentDemo /> */ }
-  {/* <LifecycleA /> */ }
-  {/* <Form /> */ }
-  {/* <h1 class="error">Error</h1>
+      {/* <PortalDemo /> */}
+      {/* <FRParentInput /> */}
+      {/* <FocusInput /> */}
+      {/* <RefsDemo /> */}
+      {/* <Table /> */}
+      {/* <FragmentDemo /> */}
+      {/* <LifecycleA /> */}
+      {/* <Form /> */}
+      {/* <h1 class="error">Error</h1>
       <h1 class={styles.success}>Success</h1> */}
-  {/* <Inline /> */ }
-  {/* <Stylesheet primary={true} /> */ }
-  {/* <NameList /> */ }
-  {/* <UserGreeting /> */ }
-  {/* <ParentComponent /> */ }
-  {/* <EventBind /> */ }
-  {/* <ClassClick /> */ }
-  {/* <FunctionClick /> */ }
-  {/* <Counter /> */ }
-  {/* <Message /> */ }
-  {/* <Greet name="Bruce" heroName="Batman">
+      {/* <Inline /> */}
+      {/* <Stylesheet primary={true} /> */}
+      {/* <NameList /> */}
+      {/* <UserGreeting /> */}
+      {/* <ParentComponent /> */}
+      {/* <EventBind /> */}
+      {/* <ClassClick /> */}
+      {/* <FunctionClick /> */}
+      {/* <Counter /> */}
+      {/* <Message /> */}
+      {/* <Greet name="Bruce" heroName="Batman">
         <p>This is children props</p>
       </Greet>
       <Greet name="Clark" heroName="Superman">
@@ -93,8 +98,8 @@ function App() {
       <Welcome name="Bruce" heroName="Batman" />
       <Welcome name="Clark" heroName="Superman" />
       <Welcome name="Diana" heroName="Wonder Woman" /> */}
-  {/* <Welcome /> */ }
-  {/* <Hello /> */ }
+      {/* <Welcome /> */}
+      {/* <Hello /> */}
     </div >
   );
 }

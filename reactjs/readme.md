@@ -1295,4 +1295,49 @@ This video is about the context api.
 
 What is context?
 
-Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+> Context provides a way to pass data through the component tree without having to pass props down manually at every level.
+
+#### 39th Video
+
+There are three steps for context
+
+1. Create the context
+2. Provide a context value
+3. Consume the context value
+
+Lets create the context
+
+```jsx
+import React from "react";
+
+const UserContext = React.createContext();
+
+const UserProvider = UserContext.Provider;
+const UserConsumer = UserContext.Consumer;
+
+export { UserProvider, UserConsumer };
+```
+
+Now lets add the context, remember that the context will only be shared with parent/child components. The context cannot show up outside the main tag.
+
+```jsx
+<UserProvider value="Mike">
+  <ComponentC />
+</UserProvider>
+```
+
+Now lets use the context in a component 3 children down.
+
+```jsx
+class ComponentC extends Component {
+  render() {
+    return (
+      <UserConsumer>
+        {(username) => {
+          return <div>Hello, {username}</div>;
+        }}
+      </UserConsumer>
+    );
+  }
+}
+```

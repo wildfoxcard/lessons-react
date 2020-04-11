@@ -1381,4 +1381,26 @@ class ComponentE extends Component {
 ComponentE.contextType = UserContext;
 ```
 
+#### 41st video
 
+This video is about creating a new react app called "react-http"
+Also I downloaded the npm package called "AXIOS"
+
+#### 42st video
+
+Using JSONPlaceholder for an API end point.
+
+This is how axios looks.
+
+```jsx
+axios
+  .get("https://jsonplaceholder.typicode.com/posts")
+  .then((response) => {
+    console.log("response", response);
+    this.setState({ posts: response.data });
+  })
+  .catch((errors) => {
+    console.log("errors", errors);
+    this.setState({ errorMsg: "Error retreiving data." });
+  });
+```

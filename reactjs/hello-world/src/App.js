@@ -1,8 +1,8 @@
 import React from 'react';
 // import logo from './logo.svg';
 import './App.css';
-import ComponentC from './components/ComponentC'
-import { UserProvider } from './components/UserContext';
+// import ComponentC from './components/ComponentC'
+// import { UserProvider } from './components/UserContext';
 // import ClickCounter from './components/ClickCounter';
 // import HoverCounter from './components/HoverCounter';
 // import ClickCounter2 from './components/ClickCounter2';
@@ -39,9 +39,10 @@ import { UserProvider } from './components/UserContext';
 function App() {
   return (
     <div className="App">
-      <UserProvider value="Mike">
+      
+      {/* <UserProvider value="Mike">
         <ComponentC />
-      </UserProvider>
+      </UserProvider> */}
       {/* <Counter
         render={(count, incrementCount) => (
           <ClickCounter2 count={count} incrementCount={incrementCount} />

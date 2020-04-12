@@ -1810,3 +1810,32 @@ useEffect(() => {
   };
 }, []);
 ```
+
+#### 54th video
+
+This video is about useEffect a with incorrect dependency
+
+```jsx
+import React, { useState, useEffect } from "react";
+
+function IntervalHookCounter() {
+  const [count, setCount] = useState(0);
+
+  const tick = () => {
+    setCount(prevCount = prevCount + 1);
+  };
+
+  useEffect(() => {
+    const interval = setInterval(tick, 1000);
+    return () => {
+      clearInterval(interval);
+    };
+  }, []);
+
+  return <div>{count}</div>;
+}
+
+export default IntervalHookCounter;
+```
+
+The dependency variaibles in the useEffect hook is telling react to watch for changes in the variable to run useEffect. Count is needed to rerender.

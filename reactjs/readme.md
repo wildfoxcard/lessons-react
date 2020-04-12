@@ -1483,7 +1483,6 @@ class PostForm extends Component {
 export default PostForm;
 ```
 
-
 #### 44th video
 
 This video is the introduction to using hooks in React
@@ -1498,7 +1497,7 @@ Hooks don't work inside classes
 
 > Why Hooks
 
-1) Reason set 1
+1. Reason set 1
 
 Understand how "this" keyword works in Javascript
 
@@ -1506,7 +1505,7 @@ Remember to blind event handlers in class components
 
 Classes don't minify very well and make hot reloading very unreliable
 
-2) Reason set 2
+2. Reason set 2
 
 There is no particular way to reuse stateful component logic
 
@@ -1514,12 +1513,238 @@ HOW and render props patterns do address this problem
 
 Make the code harder to follow
 
-3) Readon set 3
+3. Readon set 3
 
-  Create components for comples scenarios such as data fetching and subscribling to events
+Create components for comples scenarios such as data fetching and subscribling to events
 
-  Related code is not organized in one place
+Related code is not organized in one place
 
-  Ex: Data fetching - In componentDidMount and componentDidUpdate
-  Ex: Event listeners - In componentDidMount and componentWillMount
+Ex: Data fetching - In componentDidMount and componentDidUpdate
+Ex: Event listeners - In componentDidMount and componentWillMount
+
+#### 45th video
+
+This video is about replacing the state in a component with "useState".
+
+The Class Component from react.
+
+```jsx
+import React, { Component } from "react";
+
+class ClassCounter extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      count: 0,
+    };
+  }
+
+  incrementCount = () => {
+    this.setState({
+      count: this.state.count + 1,
+    });
+  };
+
+  render() {
+    return (
+      <div>
+        <button onClick={this.incrementCount}>Count {this.state.count}</button>
+      </div>
+    );
+  }
+}
+
+export default ClassCounter;
+```
+
+Create the same functionality in a functional component using "useState"
+
+```jsx
+import React, { useState } from "react";
+
+function HookCounter() {
+  const [count, setCount] = useState(0);
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>Count {count}</button>
+    </div>
+  );
+}
+
+export default HookCounter;
+```
+
+> Rules of Hooks
+
+"Only Call Hooks at the Top Level"
+
+Don't call Hooks inside loops, conditions or nested functions.
+
+"Only Call Hooks from React Functions"
+
+Call them from within React functional components and not just any regular Javascript function
+
+#### 46th video
+
+This video is about how to set state base on the previous state value.
+
+This is a very unsafe way to update count value.
+
+```jsx
+import React, { useState } from "react";
+
+function HookCounter2() {
+  const initialCount = 0;
+  const [count, setCount] = useState(initialCount);
+
+  const incrementFive = () => {
+    for (let i = 0; i < 5; i++) {
+      setCount(count + 1);
+    }
+  };
+  return (
+    <div>
+      Count: {count}
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount(count + 1)}>Increment</button>
+      <button onClick={() => setCount(count - 1)}>Decrement</button>
+      <button onClick={() => incrementFive}>Increment 5</button>
+    </div>
+  );
+}
+
+export default HookCounter2;
+```
+
+This is a better way to do this: using the "prevCount"
+
+```jsx
+import React, { useState } from "react";
+
+function HookCounter2() {
+  const initialCount = 0;
+  const [count, setCount] = useState(initialCount);
+
+  const incrementFive = () => {
+    for (let i = 0; i < 5; i++) {
+      setCount((prevCount) => prevCount + 1);
+    }
+  };
+
+  return (
+    <div>
+      Count: {count}
+      <button onClick={() => setCount(initialCount)}>Reset</button>
+      <button onClick={() => setCount((prevCount) => prevCount + 1)}>
+        Increment
+      </button>
+      <button onClick={() => setCount((prevCount) => prevCount - 1)}>
+        Decrement
+      </button>
+      <button onClick={incrementFive}>Increment 5</button>
+    </div>
+  );
+}
+
+export default HookCounter2;
+```
+
+#### 47th video
+
+This video is about another example that used a the state hook. Objects as variables.
+
+```jsx
+import React, { useState } from "react";
+
+function HookCounter3() {
+  const [name, setName] = useState({
+    firstName: "",
+    lastName: "",
+  });
+
+  return (
+    <div>
+      <input
+        type="text"
+        value={name.firstName}
+        onChange={(e) => setName({ ...name, firstName: e.target.value })}
+      />
+      <input
+        type="text"
+        value={name.lastName}
+        onChange={(e) => setName({ ...name, lastName: e.target.value })}
+      />
+      <h2>Your first name is - {name.firstName}</h2>
+      <h2>Your list name is - {name.lastName}</h2>
+      <div>{JSON.stringify(name)}</div>
+    </div>
+  );
+}
+
+export default HookCounter3;
+```
+
+note: spread operator.
+
+#### 48th video
+
+This is about is when the state is an array.
+
+```jsx
+import React, { useState } from "react";
+
+function HookCounter4() {
+  const [items, setItems] = useState([]);
+
+  const addItem = () => {
+    setItems([
+      ...items,
+      {
+        id: items.length,
+        value: Math.floor(Math.random() * 10) + 1,
+      },
+    ]);
+  };
+
+  return (
+    <div>
+      <button onClick={addItem}>Add a number</button>
+      <ul>
+        {items.map((item) => (
+          <li key={item.id}>{item.value}</li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default HookCounter4;
+```
+
+> Summary - useState
+
+The useState hook lets you add state to functional components
+
+in Classes, the state is always an object.
+
+With the useState hook, the state doesn't have to be an object.
+
+The useState hook returns an array with 2 elements.
+
+The first element is the current value of the state, and the second element is a state setter function.
+
+New state value depends on the previous state value? You can pass a function to the setter function.
+
+When dealing with objects or arrays, always make sure to spread your state variable and then call the setter function.
+
+
+#### 49th video
+
+This video is an introduction to the "useEffects" hook.
+
+This video was talking about how "useEffect" replaced "componentDidMount", "componentDidUpdate", and "componentWillUnmount"
+
+
 

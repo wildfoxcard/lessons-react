@@ -1789,9 +1789,24 @@ This video is about only loading the useEffect once.
 Just add an empty array as the second useEffect argument.
 
 ```jsx
- useEffect(()=>{
-        console.log('useEffect called')
-        window.addEventListener('mousemove', logMousePosition)
+useEffect(() => {
+  console.log("useEffect called");
+  window.addEventListener("mousemove", logMousePosition);
+}, []);
+```
 
-    }, [])
+#### 53rd video
+
+This video is cleaning up your code in the "useEffect" return statement.
+
+```jsx
+useEffect(() => {
+  console.log("useEffect called");
+  window.addEventListener("mousemove", logMousePosition);
+
+  return () => {
+    console.log("Component unmounting code");
+    window.removeEventListener("mousemove", logMousePosition);
+  };
+}, []);
 ```

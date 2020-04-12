@@ -11,8 +11,10 @@ function App() {
   return (
     <div className="App">
       {/* <ClassCounter /> */}
-      {/* <HookCounter /> */}
-      <HookCounter4 />
+      <HookCounter />
+      {/* <HookCounter2 /> */}
+      {/* <HookCounter3 /> */}
+      {/* <HookCounter4 /> */}
     </div>
   );
 }

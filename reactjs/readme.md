@@ -1739,12 +1739,32 @@ New state value depends on the previous state value? You can pass a function to 
 
 When dealing with objects or arrays, always make sure to spread your state variable and then call the setter function.
 
-
 #### 49th video
 
 This video is an introduction to the "useEffects" hook.
 
 This video was talking about how "useEffect" replaced "componentDidMount", "componentDidUpdate", and "componentWillUnmount"
 
+#### 50th video
 
+This video is using the "useEffect" hook for the first time.
 
+```jsx
+import React, { useState, useEffect } from "react";
+
+function HookCounter() {
+  const [count, setCount] = useState(0);
+
+  useEffect(() => {
+    document.title = `you clicked ${count} times`;
+  });
+
+  return (
+    <div>
+      <button onClick={() => setCount(count + 1)}>Count {count}</button>
+    </div>
+  );
+}
+
+export default HookCounter;
+```

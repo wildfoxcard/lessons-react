@@ -1482,3 +1482,44 @@ class PostForm extends Component {
 
 export default PostForm;
 ```
+
+
+#### 44th video
+
+This video is the introduction to using hooks in React
+
+> What are hooks
+
+Hooks are the new feature addition in React version 16.8 which allow you to use React features without having to write a class.
+
+Ex: State of a component
+
+Hooks don't work inside classes
+
+> Why Hooks
+
+1) Reason set 1
+
+Understand how "this" keyword works in Javascript
+
+Remember to blind event handlers in class components
+
+Classes don't minify very well and make hot reloading very unreliable
+
+2) Reason set 2
+
+There is no particular way to reuse stateful component logic
+
+HOW and render props patterns do address this problem
+
+Make the code harder to follow
+
+3) Readon set 3
+
+  Create components for comples scenarios such as data fetching and subscribling to events
+
+  Related code is not organized in one place
+
+  Ex: Data fetching - In componentDidMount and componentDidUpdate
+  Ex: Event listeners - In componentDidMount and componentWillMount
+

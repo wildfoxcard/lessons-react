@@ -1768,3 +1768,16 @@ function HookCounter() {
 
 export default HookCounter;
 ```
+
+#### 51st video
+
+Applying a conditional "useEffect" hook should be perferred for performance reasons.
+
+You have an array with dependencies as the second argument on the "useEffect" hook. The code below means that I should only update the document.title if the count changes.
+
+```jsx
+useEffect(() => {
+  console.log("useEffect - Updating document title");
+  document.title = `you clicked ${count} times`;
+}, [count]);
+```

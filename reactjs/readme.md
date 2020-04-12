@@ -1781,3 +1781,17 @@ useEffect(() => {
   document.title = `you clicked ${count} times`;
 }, [count]);
 ```
+
+#### 52nd video
+
+This video is about only loading the useEffect once.
+
+Just add an empty array as the second useEffect argument.
+
+```jsx
+ useEffect(()=>{
+        console.log('useEffect called')
+        window.addEventListener('mousemove', logMousePosition)
+
+    }, [])
+```

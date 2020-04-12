@@ -1822,7 +1822,7 @@ function IntervalHookCounter() {
   const [count, setCount] = useState(0);
 
   const tick = () => {
-    setCount(prevCount = prevCount + 1);
+    setCount((prevCount = prevCount + 1));
   };
 
   useEffect(() => {
@@ -1839,3 +1839,38 @@ export default IntervalHookCounter;
 ```
 
 The dependency variaibles in the useEffect hook is telling react to watch for changes in the variable to run useEffect. Count is needed to rerender.
+
+#### 55th Video
+
+This video is about the using axios for a http get request, then presenting that data with the state.
+
+```jsx
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+function DataFetching() {
+  const [posts, setPosts] = useState([]);
+
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts")
+      .then((res) => {
+        console.log(res);
+        setPosts(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }, []);
+
+  return (
+    <div>
+      {posts.map((post) => (
+        <li key={post.id}>{post.title}</li>
+      ))}
+    </div>
+  );
+}
+
+export default DataFetching;
+```

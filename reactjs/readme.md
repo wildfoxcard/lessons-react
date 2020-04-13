@@ -1938,7 +1938,7 @@ function DataFetching() {
       });
   }, [idFromButtonClick]);
 
-  const handleClick = (id) => {
+  const handleClick = () => {
     setIdFromButtonClick(id);
   };
 
@@ -1958,3 +1958,13 @@ function DataFetching() {
 
 export default DataFetching;
 ```
+
+
+#### 58th video
+
+This video is an introduction to "useContext" hook.
+
+The video was a refresher about the purpose of context in react.
+
+
+

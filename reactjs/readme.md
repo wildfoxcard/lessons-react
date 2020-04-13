@@ -1959,15 +1959,28 @@ function DataFetching() {
 export default DataFetching;
 ```
 
-
 #### 58th video
 
 This video is an introduction to "useContext" hook.
 
 The video was a refresher about the purpose of context in react.
 
-
 #### 59th video
 
 This video is about the legency usage of context in a react application.
 
+#### 60th video
+
+This video is about useContext in react.
+
+context providers are the same. But the comsumers are like:
+
+```jsx
+import React, { useContext } from "react";
+import {UserContext, ChannelContext } from '../App'
+
+function ComponentTest() {
+  const user = useContext(UserContext);
+  const channel = useContext(ChannelContext);
+}
+```

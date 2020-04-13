@@ -2157,3 +2157,13 @@ function CounterThree() {
 
 export default CounterThree;
 ```
+
+#### 65th video
+
+This video is about the useReducer with useContext
+
+This is for when you want to share a value across components.
+
+```jsx
+
+```

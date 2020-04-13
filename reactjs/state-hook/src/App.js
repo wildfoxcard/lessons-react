@@ -10,12 +10,14 @@ import './App.css';
 // import MouseContainer from './components/MouseContainer';
 // import IntervalHookCounter from './components/IntervalHookCounter';
 // import DataFetching from './components/DataFetching';
-import CounterOne from './components/CounterOne';
+// import CounterOne from './components/CounterOne';
+import CounterTwo from './components/CounterTwo';
 
 function App() {
   return (
     <div className="App">
-      <CounterOne />
+      <CounterTwo />
+      {/* <CounterOne /> */}
       {/* <MouseContainer /> */}
       {/* <DataFetching /> */}
       {/* <IntervalHookCounter /> */}

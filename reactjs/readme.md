@@ -1984,3 +1984,28 @@ function ComponentTest() {
   const channel = useContext(ChannelContext);
 }
 ```
+
+#### 61st video
+
+This video is an introduction to the 'useReducer' hook in react.
+
+useReducer is a hook that is used for state management
+
+It is an alternative to useState
+
+What is the difference? useState is built using use Reducer
+
+When to useReducer to useState? -- figure that out later
+
+---
+
+useReducer summary
+
+useReducer is a hook that is used for state management in React
+
+useReducer is related to reducer functions
+
+useReducer(reducer, initialState)
+
+reducer(currentState, action)
+

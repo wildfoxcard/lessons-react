@@ -9,13 +9,15 @@ import './App.css';
 // import HookMouse from './components/HookMouse';
 // import MouseContainer from './components/MouseContainer';
 // import IntervalHookCounter from './components/IntervalHookCounter';
-import DataFetching from './components/DataFetching';
+// import DataFetching from './components/DataFetching';
+import CounterOne from './components/CounterOne';
 
 function App() {
   return (
     <div className="App">
+      <CounterOne />
       {/* <MouseContainer /> */}
-      <DataFetching />
+      {/* <DataFetching /> */}
       {/* <IntervalHookCounter /> */}
       {/* <HookMouse /> */}
       {/* <ClassCounter /> */}

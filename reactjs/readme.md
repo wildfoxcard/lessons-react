@@ -2325,10 +2325,10 @@ function DataFetchingTwo() {
 
 export default DataFetchingTwo;
 ```
+
 #### 68th video
 
 This video is about useState vs useReducer
-
 
 useReducer better for complex types: objects and arries
 useState better for simple types.
@@ -2366,8 +2366,30 @@ how?
 
 ```jsx
 const incrementAge = useCallback(() => {
-  setAge(age + 1)
-}, [age])
+  setAge(age + 1);
+}, [age]);
+```
+
+#### 70th video
+
+This video is about useMemo.
+
+This hook is for performance optimization.
+
+Use memo is a hook that returns a cache item unless a dependency has changed.
+
+The difference between useCallack and useMemo is...
+
+useCallback - caches function
+useMemo caches result
+
+```jsx
+const isEven = useMemo(() => {
+  let i = 0;
+
+  while (i < 2000000000) i++; // slow!
+  return counterOne % 2 === 0;
+}, [counterOne]);
 ```
 
 

@@ -2418,3 +2418,38 @@ function FocusInput() {
 
 export default FocusInput;
 ```
+
+#### 72nd video
+
+This video is about other ways for useRef.
+
+Using useRef to hold an immutable object.
+
+```jsx
+import React, { useState, useEffect, useRef } from "react";
+
+function HookTimer() {
+  const [timer, setTimer] = useState(0);
+  const intervalRef = useRef();
+
+  useEffect(() => {
+    intervalRef.current = setInterval(() => {
+      setTimer((prevTimer) => prevTimer + 1);
+    }, 1000);
+    return () => {
+      clearInterval(intervalRef.currect);
+    };
+  }, []);
+
+  return (
+    <div>
+      Hook Timer - {timer}
+      <button onClick={() => clearInterval(intervalRef.current)}>
+        Clear Hook Timer
+      </button>
+    </div>
+  );
+}
+
+export default HookTimer;
+```

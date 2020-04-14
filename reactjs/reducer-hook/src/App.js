@@ -3,12 +3,14 @@ import './App.css';
 // import DataFetchingOne from './component/DataFetchingOne';
 // import DataFetchingTwo from './component/DataFetchingTwo';
 // import Counter from './component/Counter';
-import FocusInput from './component/FocusInput';
+// import FocusInput from './component/FocusInput';
+import HookTimer from './component/HookTimer';
 
 function App() {
   return (
     <div className="App">
-      <FocusInput />
+      <HookTimer />
+      {/* <FocusInput /> */}
       {/* <DataFetchingTwo /> */}
       {/* <Counter /> */}
     </div>

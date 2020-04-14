@@ -2347,3 +2347,27 @@ yes-useReducer
 local vs global:
 local - useState
 gloval - useReducer
+
+#### 69th video
+
+This video is about 'useCallback' hook.
+
+The useCallback hook is about performance improvements.
+
+What is useCallback
+
+useCallback is a hook that will return a memoized version of the callback function that only changes if one of the dependencies has changed.
+
+why?
+
+It is useful when passing callbacks to optimized child components that rely on reference equality to prevent unnecessary renders
+
+how?
+
+```jsx
+const incrementAge = useCallback(() => {
+  setAge(age + 1)
+}, [age])
+```
+
+

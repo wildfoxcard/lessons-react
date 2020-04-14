@@ -2325,3 +2325,25 @@ function DataFetchingTwo() {
 
 export default DataFetchingTwo;
 ```
+#### 68th video
+
+This video is about useState vs useReducer
+
+
+useReducer better for complex types: objects and arries
+useState better for simple types.
+
+useReducer is better for number of transitions in state.
+useState is better for one or two states.
+
+Relate state transitions?
+no - useState
+yes - useReducer
+
+Buiness Logic:
+no-useState
+yes-useReducer
+
+local vs global:
+local - useState
+gloval - useReducer

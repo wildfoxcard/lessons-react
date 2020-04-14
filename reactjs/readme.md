@@ -2458,4 +2458,34 @@ export default HookTimer;
 
 This video is about custom hooks.
 
+Custom Hooks are:
 
+1. a javascript function that starts with use
+2. A custom hook can also call other hooks if required
+
+why?
+share logic - alernative to HOCs and Render Props
+
+#### 74th video
+
+This video is about creating a custom hook.
+
+Creating a custom hook main purpose is to pass logic to many components.
+
+```jsx
+import { useEffect } from "react";
+
+function useDocumentTitle(count) {
+  useEffect(() => {
+    document.title = `count ${count}`;
+  }, [count]);
+}
+
+export default useDocumentTitle;
+```
+
+now in the component 
+
+```jsx
+useDocumentTitle(1)
+```

@@ -2484,8 +2484,34 @@ function useDocumentTitle(count) {
 export default useDocumentTitle;
 ```
 
-now in the component 
+now in the component
 
 ```jsx
-useDocumentTitle(1)
+useDocumentTitle(1);
+```
+
+#### 75th video
+
+This video is about creating a counter custom hook.
+
+```jsx
+import { useState } from "react";
+
+function useCounter(initialCount = 0, value) {
+  const [count, setCount] = useState(initialCount);
+
+  const increment = () => {
+    setCount((prevCount) => prevCount + value);
+  };
+  const decrement = () => {
+    setCount((prevCount) => prevCount - value);
+  };
+  const reset = () => {
+    setCount(initialCount);
+  };
+
+  return [count, increment, decrement, reset];
+}
+
+export default useCounter;
 ```

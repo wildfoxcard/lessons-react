@@ -2165,5 +2165,107 @@ This video is about the useReducer with useContext
 This is for when you want to share a value across components.
 
 ```jsx
+import React, { useReducer, useContext } from "react";
+import "./App.css";
+import ComponentA from "./components/ComponentA";
+import ComponentB from "./components/ComponentB";
+import ComponentC from "./components/ComponentC";
 
+export const CountContext = React.createContext();
+
+const initialState = 0;
+const reducer = (state, action) => {
+  switch (action) {
+    case "increment":
+      return state + 1;
+    case "decrement":
+      return state - 1;
+    case "reset":
+      return initialState;
+    default:
+      return state;
+  }
+};
+
+function App() {
+  const [count, dispatch] = useReducer(reducer, initialState);
+  return (
+    <CountContext.Provider
+      value={{ countState: count, countDispatch: dispatch }}
+    >
+      <div className="App">
+        Count - {count}
+        <ComponentA />
+        <ComponentB />
+        <ComponentC />
+      </div>
+    </CountContext.Provider>
+  );
+}
+
+export default App;
+```
+
+Now we can simply access the reducer state in the context.
+
+```jsx
+import React, { useContext } from "react";
+import { CountContext } from "../App";
+
+function ComponentA() {
+  const countContext = useContext(CountContext);
+  return (
+    <div>
+      Component A
+      <button onClick={() => countContext.countDispatch("increment")}>
+        Increment
+      </button>
+      <button onClick={() => countContext.countDispatch("decrement")}>
+        Decrement
+      </button>
+      <button onClick={() => countContext.countDispatch("reset")}>Reset</button>
+    </div>
+  );
+}
+
+export default ComponentA;
+```
+
+#### 66st video
+
+This video is about fetching data with "useState". The video is going to be about "useReducer" as well. A new project called reducer-hook was created.
+
+```jsx
+import React, { useState, useEffect } from "react";
+import axios from "axios";
+
+function DataFetchingOne() {
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState("");
+  const [post, setPost] = useState({});
+
+  useEffect(() => {
+    axios
+      .get("https://jsonplaceholder.typicode.com/posts/1")
+      .then((response) => {
+        setLoading(false);
+        setPost(response.data);
+        setError("");
+      })
+      .catch((error) => {
+        setLoading(false);
+        setPost({});
+        setError("Something went wrong.");
+      });
+  }, []);
+
+  return (
+    <div>
+      {loading ? "loading" : post.title}
+      {error ? error : null}
+    </div>
+  );
+}
+
+export default DataFetchingOne;
 ```

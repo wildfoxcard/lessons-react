@@ -7,14 +7,16 @@ import './App.css';
 // import HookTimer from './component/HookTimer';
 // import DocTitleOne from './component/DocTitleOne';
 // import DocTitleTwo from './component/DocTitleTwo';
-import CounterOne from './component/CounterOne';
-import CounterTwo from './component/CounterTwo';
+// import CounterOne from './component/CounterOne';
+// import CounterTwo from './component/CounterTwo';
+import UserForm from './component/UserForm';
 
 function App() {
   return (
     <div className="App">
-      <CounterOne />
-      <CounterTwo />
+      <UserForm />
+      {/* <CounterOne />
+      <CounterTwo /> */}
       {/* <DocTitleOne />
       <DocTitleTwo /> */}
       {/* <HookTimer /> */}

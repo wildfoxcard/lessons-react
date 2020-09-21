@@ -11,3 +11,5 @@
 3. react-spring - (youtube)
 
 4. tina-cms-beginer-tutorial - (article)
+
+5. tina-cms-inline-tutorial - (article)
